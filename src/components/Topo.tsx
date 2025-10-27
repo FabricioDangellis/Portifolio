@@ -15,15 +15,15 @@ export default function Topo() {
           className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg border-2 border-gray-700"
         />
         <h1 className="text-2xl md:text-3xl font-semibold text-white mt-6">
-          Fabrício D’angellis
+          Fabrício D’Angellis
         </h1>
         <p className="text-gray-400 text-base md:text-lg mt-2">
           Desenvolvedor FullStack Júnior
         </p>
 
-        <button className="mt-6 bg-linear-to-r from-[#20686F] to-[#671D7E] px-6 py-2 md:px-8 md:py-3 rounded-full text-white font-medium hover:opacity-90 transition">
+        <a href="#sobre" className="mt-6 bg-linear-to-r from-[#20686F] to-[#671D7E] px-6 py-2 md:px-8 md:py-3 rounded-full text-white font-medium hover:opacity-90 transition">
           Mais sobre mim
-        </button>
+        </a>
       </section>
     </div>
   );

@@ -23,21 +23,21 @@ export default function NavBar() {
 
       {/* Desktop Menu */}
       <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-        <Link to="/" className="hover:text-gray-300 transition-colors">
+        <a href="/" className="hover:text-gray-300 transition-colors">
           Home
-        </Link>
-        <Link to="/sobre" className="hover:text-gray-300 transition-colors">
+        </a>
+        <a href="#sobre" className="hover:text-gray-300 transition-colors">
           Sobre
-        </Link>
-        <Link to="/projetos" className="hover:text-gray-300 transition-colors">
+        </a>
+        <a href="#projetos" className="hover:text-gray-300 transition-colors">
           Projetos
-        </Link>
-        <Link
-          to="/contato"
+        </a>
+        <a
+          href="#contato"
           className="bg-linear-to-r from-[#20686F] to-[#671D7E] px-4 py-1.5 rounded-full hover:opacity-90 transition-all"
         >
           Contato
-        </Link>
+        </a>
       </nav>
 
       {/* Mobile Menu Button */}

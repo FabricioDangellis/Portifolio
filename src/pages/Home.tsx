@@ -1,3 +1,4 @@
+import Contato from "../components/Contato";
 import Projetos from "../components/Projetos";
 import Sobre from "../components/Sobre";
 import Topo from "../components/Topo";
@@ -9,6 +10,7 @@ export default function Home() {
       <Topo/>
       <Sobre/>
       <Projetos/>
+      <Contato/>
     </>
   );
 }

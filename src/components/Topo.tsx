@@ -3,7 +3,10 @@ import Perfil from "../assets/Perfil.png";
 
 export default function Topo() {
   return (
-    <div className="h-screen pl-5 pr-5 pt-5 lg:pl-30 lg:pr-30 md:pl-20 md:pr-20 bg-linear-to-b from-[#1A2A3B] to-[#0D1417]">
+    <div
+      id="topo"
+      className="h-screen pl-5 pr-5 pt-5 lg:pl-30 lg:pr-30 md:pl-20 md:pr-20 bg-linear-to-b from-[#1A2A3B] to-[#0D1417]"
+    >
       <div className="h-1/10">
         <NavBar />
       </div>
@@ -21,7 +24,10 @@ export default function Topo() {
           Desenvolvedor FullStack Júnior
         </p>
 
-        <a href="#sobre" className="mt-6 bg-linear-to-r from-[#20686F] to-[#671D7E] px-6 py-2 md:px-8 md:py-3 rounded-full text-white font-medium hover:opacity-90 transition">
+        <a
+          href="#sobre"
+          className="mt-6 bg-linear-to-r from-[#20686F] to-[#671D7E] px-6 py-2 md:px-8 md:py-3 rounded-full text-white font-medium hover:opacity-90 transition"
+        >
           Mais sobre mim
         </a>
       </section>

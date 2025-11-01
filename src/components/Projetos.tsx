@@ -9,7 +9,7 @@ export default function Projetos() {
       descricao: "Projeto de um sistema de acompanhamento pscológico infantil",
       imagem: Trajetorias,
       tags: ["React", "TypeScript"],
-      linkPage: "/projeto/trajetorias",
+      linkPage: "/projetos/trajetorias",
     },
     {
       titulo: "TaskBoard",

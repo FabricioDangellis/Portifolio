@@ -7,8 +7,27 @@ import {
 import NavBar from "../components/NavBar";
 import Perfil from "../assets/Perfil.png";
 import Imagem1 from "../assets/turned-gray-laptop-computer.jpg";
+import Trajetorias from "../assets/dashboard.png";
+import TaskBoard from "../assets/Imagem2.png";
+import Projeto from "../components/Projeto";
 
 export default function Home() {
+  const projetos = [
+    {
+      titulo: "Trajetórias",
+      descricao: "Projeto de um sistema de acompanhamento pscológico infantil",
+      imagem: Trajetorias,
+      tags: ["React", "TypeScript"],
+      linkPage: "/projetos/trajetorias",
+    },
+    {
+      titulo: "TaskBoard",
+      descricao: "Sistema simples para o gerenciamento de tarefas",
+      imagem: TaskBoard,
+      tags: ["React", "TypeScript", "Tailwind", "Context API"],
+      linkPage: "/projetos/taskboard",
+    },
+  ];
   return (
     <section className="bg-gray-900 h-screen">
       <NavBar />
@@ -42,7 +61,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="#projetos"
                 className="w-1/4 min-w-30 rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Projetos
@@ -118,7 +137,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="servicos" className="bg-gray-900 min-h-screen flex items-center pb-20 sm:pb-0">
+      <div
+        id="servicos"
+        className="bg-gray-900 min-h-screen flex items-center pb-20 sm:pb-0"
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-400">
@@ -173,6 +195,37 @@ export default function Home() {
               </div>
             </dl>
           </div>
+        </div>
+      </div>
+
+      <div
+        id="projetos"
+        className="relative isolate min-h-screen bg-gray-900 px-6 py-10 lg:px-0 pb-20 sm:pb-10"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
+        >
+          <div
+            style={{
+              clipPath:
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+            }}
+            className="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20"
+          />
+        </div>
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-base/7 font-semibold text-indigo-400">
+            Projetos
+          </h2>
+          <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+            Projetos desenvolvidos
+          </p>
+        </div>
+        <div className="w-full max-w-7xl mx-auto mt-16 grid grid-cols-1 items-center gap-8 px-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projetos.map((projeto) => (
+            <Projeto key={projeto.titulo} {...projeto} />
+          ))}
         </div>
       </div>
     </section>

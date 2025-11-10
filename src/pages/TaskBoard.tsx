@@ -6,62 +6,50 @@ import {
   SquareCode,
 } from "lucide-react";
 import NavBar from "../components/NavBar";
-import TrajetoriasIMG from "../assets/Logo3.svg";
-import TrajetoriasDash from "../assets/dashboard.png";
+import TaskboardIMG from "../assets/Imagem2.png";
+import TaskboardLogo from "../assets/logoTaksboard.png";
 
-import login from "../assets/Imagem1.png";
-import cadastro from "../assets/cadastro.png";
-import pacientes from "../assets/pacientes.png";
-import paciente from "../assets/Paciente.png";
-import atendimentos from "../assets/atendimentos.png";
-import atendimento from "../assets/Atendimento.png";
-import calendario from "../assets/calendario.png";
+import tasks from "../assets/tasks.png";
+import novatask from "../assets/novatask.png";
+import editartask from "../assets/editartask.png";
+import excluirtask from "../assets/excluirtask.png";
+import tasksconcluidas from "../assets/tasksconcluidas.png";
 import ImageGalleryModal from "../components/ImageModal";
 import { useState } from "react";
 
-export default function Trajetorias() {
+export default function TaskBoard() {
   const currentYear = new Date().getFullYear();
 
   const products = [
     {
       id: 1,
-      name: "Login",
-      imageSrc: login,
+      name: "TaskBoard",
+      imageSrc: TaskboardIMG,
     },
     {
       id: 2,
-      name: "Cadastro",
-      imageSrc: cadastro,
+      name: "Tasks",
+      imageSrc: tasks,
     },
     {
       id: 3,
-      name: "Dashboard",
-      imageSrc: TrajetoriasDash,
+      name: "Nova Task",
+      imageSrc: novatask,
     },
     {
       id: 4,
-      name: "Pacientes",
-      imageSrc: pacientes,
+      name: "Editar Task",
+      imageSrc: editartask,
     },
     {
       id: 4,
-      name: "Paciente",
-      imageSrc: paciente,
+      name: "Excluir Task",
+      imageSrc: excluirtask,
     },
     {
       id: 6,
-      name: "Atendimentos",
-      imageSrc: atendimentos,
-    },
-    {
-      id: 7,
-      name: "Atendimento",
-      imageSrc: atendimento,
-    },
-    {
-      id: 8,
-      name: "Calendário",
-      imageSrc: calendario,
+      name: "Tasks Concluidas",
+      imageSrc: tasksconcluidas,
     },
   ];
 
@@ -79,7 +67,9 @@ export default function Trajetorias() {
     setCurrentIndex((prev: number) => (prev + 1) % products.length);
 
   const prevImage = () =>
-    setCurrentIndex((prev: number) => (prev === 0 ? products.length - 1 : prev - 1));
+    setCurrentIndex((prev: number) =>
+      prev === 0 ? products.length - 1 : prev - 1
+    );
 
   return (
     <section className="bg-gray-900 h-screen">
@@ -103,17 +93,18 @@ export default function Trajetorias() {
             </svg>
 
             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-              <img src={TrajetoriasIMG} className="sm:mb-10" />
+              <img src={TaskboardLogo} className="sm:mb-10 bg-white/70 rounded-lg h-13" />
+
               <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-                Sitema Trajetórias
+                Sitema TaskBoard
               </h2>
               <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                Sistema de acompanhamento psicológico infantil criado com base
-                nos conceitos da IHC (Interação Humano-Computador)
+                Este projeto se trata de um sistema simples para o gerenciamento
+                de tarefas, desenvolvido utilizando React e TypeScript.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
-                  href="https://trajetorias.vercel.app"
+                  href="https://mynewtaskboard.vercel.app/"
                   className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Visitar sistema
@@ -129,7 +120,7 @@ export default function Trajetorias() {
             <div className="relative mt-16 h-80 lg:mt-8">
               <img
                 alt="App screenshot"
-                src={TrajetoriasDash}
+                src={TaskboardIMG}
                 width={1824}
                 height={1080}
                 className="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
@@ -145,47 +136,25 @@ export default function Trajetorias() {
             Descrição
           </h3>
           <p className="mt-5 text-l text-justify">
-            O Trajetórias é um sistema web desenvolvido com o objetivo de
-            avaliar a qualidade da interface e da interação entre psicólogos e
-            responsáveis de crianças em acompanhamento psicológico, seguindo os
-            princípios da Interação Humano-Computador (IHC). O projeto busca
-            oferecer uma experiência acessível, emocionalmente acolhedora e
-            fácil de usar, permitindo que profissionais da psicologia cadastrem
-            pacientes, agendem consultas e registrem anotações de atendimento,
-            enquanto os responsáveis acompanham o progresso terapêutico dos
-            filhos. A concepção do sistema foi guiada por princípios de
-            usabilidade, acessibilidade, Gestalt e design emocional, promovendo
-            uma interface intuitiva, harmônica e centrada nas necessidades
-            humanas. <br /> <br />A interface foi desenvolvida em React (com
-            Vite como ambiente de desenvolvimento), utilizando uma arquitetura
-            baseada em componentes reutilizáveis. O sistema inclui um dashboard
-            interativo para o psicólogo, com gráficos de acompanhamento, um
-            calendário semanal e mensal, e um perfil do paciente contendo
-            histórico de consultas, anotações e documentos em PDF. O design das
-            telas foi pensado para transmitir empatia e clareza, aplicando cores
-            suaves, ícones compreensíveis e boa hierarquia visual. Os elementos
-            seguem os princípios da Gestalt, favorecendo a percepção e reduzindo
-            o esforço cognitivo dos usuários durante a navegação. <br /> <br />
-            Para os testes e simulações, foi desenvolvido um backend “fake”,
-            criado especificamente para reproduzir o comportamento de um
-            servidor real sem a necessidade de infraestrutura completa. Esse
-            backend simulado permite que o sistema funcione de forma interativa
-            — possibilitando o cadastro de usuários, agendamento de consultas e
-            atualização de listas em tempo real —, mas com os dados armazenados
-            apenas no ambiente de teste. Essa abordagem foi fundamental para a
-            realização de testes empíricos com psicólogos reais, permitindo
-            observar a interação, coletar feedbacks e avaliar a efetividade da
-            interface quanto à usabilidade, clareza e adequação emocional.
+            O TaskBoard é um projeto de gerenciamento de tarefas desenvolvido
+            com React e TypeScript, que tem como objetivo oferecer uma interface
+            simples, funcional e agradável para organização pessoal. <br />
             <br />
-            <br />O Trajetórias vai além de um sistema de gestão: ele representa
-            uma aplicação prática dos conceitos de IHC em um contexto sensível e
-            socialmente relevante. O projeto demonstra como a teoria da
-            interação, aliada ao design emocional e à percepção visual, pode
-            impactar positivamente o uso de tecnologias na área da saúde mental
-            infantil. A avaliação feita com profissionais reais proporcionou
-            insights valiosos para aprimorar a interface e reforçou o papel da
-            empatia, da estética e da simplicidade como fatores determinantes
-            para o sucesso de sistemas voltados ao cuidado humano.
+            O sistema permite criar, editar e excluir tarefas de forma
+            intuitiva, contando com o uso de modais personalizados e mensagens
+            de feedback para garantir melhor experiência ao usuário. <br />
+            <br />A arquitetura foi pensada para manter uma separação clara de
+            responsabilidades, usando componentes reutilizáveis e bem
+            organizados. Foi decidido centralizar as regras de negócio em um
+            contexto global, assim as operações relacionadas às tarefas ficam
+            consistentes em toda a aplicação. Além disso, priorizei a
+            responsividade e a acessibilidade, para que o sistema funcione bem
+            em diferentes dispositivos e tamanhos de tela. Foi usado o
+            localStorage para persistência local, simulando um backend sem
+            prejudicar a experiência do usuário. Por fim, as escolhas de design
+            tiveram como foco oferecer uma interface simples, intuitiva,
+            agradável e com feedbacks das ações, sempre pensando na facilidade
+            de uso e na simplicidade da implementação.
           </p>
         </div>
       </div>
@@ -206,7 +175,7 @@ export default function Trajetorias() {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-l font-medium text-gray-100">Nome</dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Trajetórias
+                  TaskBoard
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -214,7 +183,8 @@ export default function Trajetorias() {
                   Público Alvo
                 </dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Psicólogos e responsáveis por crianças em acompanhamento
+                  Estudantes, equipes pequenas, usuários que desejam organizar
+                  tarefas visualmente{" "}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -222,7 +192,7 @@ export default function Trajetorias() {
                   Arquitetura
                 </dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Cliente-servidor (frontend + backend simulado com mock)
+                  Single Page Application (SPA){" "}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -242,21 +212,23 @@ export default function Trajetorias() {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-l font-medium text-gray-100">Estilos</dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  CSS
-                </dd>
-              </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-l font-medium text-gray-100">Backend</dt>
-                <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Simulado pra testes
+                  TailwindCSS
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-l font-medium text-gray-100">
-                  Banco de dados
+                  Gerenciamento de estados
                 </dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Simulado / Mock em memória (para testes)
+                  Context API
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="text-l font-medium text-gray-100">
+                  Persistência de dados
+                </dt>
+                <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
+                  LocalStorage (simulando backend){" "}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -270,9 +242,9 @@ export default function Trajetorias() {
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                 <dt className="text-l font-medium text-gray-100">Descrição</dt>
                 <dd className="mt-1 text-l text-gray-400 sm:col-span-2 sm:mt-0">
-                  Plataforma para acompanhamento da saúde mental infantil,
-                  permitindo que psicólogos registrem consultas e responsáveis
-                  visualizem o progresso do paciente.
+                  Aplicação web para organização de tarefas em quadros,
+                  permitindo criar, editar e excluir tarefas de forma visual e
+                  intuitiva.
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -292,13 +264,13 @@ export default function Trajetorias() {
                         />
                         <div className="ml-4 flex min-w-0 flex-1 gap-2">
                           <span className="truncate font-medium text-white">
-                            trajetorias.vercel.app
+                            mynewtaskboard.vercel.app/
                           </span>
                         </div>
                       </div>
                       <div className="ml-4 shrink-0">
                         <a
-                          href="https://trajetorias.vercel.app"
+                          href="https://mynewtaskboard.vercel.app/"
                           className="font-medium text-indigo-400 hover:text-indigo-300"
                         >
                           Visitar
@@ -313,13 +285,13 @@ export default function Trajetorias() {
                         />
                         <div className="ml-4 flex min-w-0 flex-1 gap-2">
                           <span className="truncate font-medium text-white">
-                            github.com/FabricioDangellis/front-Trajetorias
+                            github.com/FabricioDangellis/Taskboard
                           </span>
                         </div>
                       </div>
                       <div className="ml-4 shrink-0">
                         <a
-                          href="https://github.com/FabricioDangellis/front-Trajetorias"
+                          href="https://github.com/FabricioDangellis/Taskboard"
                           className="font-medium text-indigo-400 hover:text-indigo-300"
                         >
                           Visitar
@@ -347,12 +319,18 @@ export default function Trajetorias() {
 
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {products.map((p, index) => (
-              <button key={p.id} onClick={() => openModal(index)} className="group">
+              <button
+                key={p.id}
+                onClick={() => openModal(index)}
+                className="group"
+              >
                 <img
                   src={p.imageSrc}
                   className="rounded-lg object-cover w-full cursor-pointer"
                 />
-                <p className="text-center text-gray-600 mt-2 group-hover:text-white">{p.name}</p>
+                <p className="text-center text-gray-600 mt-2 group-hover:text-white">
+                  {p.name}
+                </p>
               </button>
             ))}
           </div>

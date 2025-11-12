@@ -44,7 +44,7 @@ export default function Trajetorias() {
       imageSrc: pacientes,
     },
     {
-      id: 4,
+      id: 5,
       name: "Paciente",
       imageSrc: paciente,
     },

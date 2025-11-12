@@ -1,16 +1,29 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { SquareCode, Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "Sobre", href: "#sobre" },
-    { name: "Serviços", href: "#servicos" },
-    { name: "Projetos", href: "#projetos" },
+    { name: "Home", href: " " },
+    { name: "Sobre", href: "sobre" },
+    { name: "Serviços", href: "servicos" },
+    { name: "Projetos", href: "projetos" },
   ];
+
+  function handleNavigation(sectionId: string) {
+    if (location.pathname !== "/") {
+      navigate(`/#${sectionId}`);
+    } else {
+      const section = document.getElementById(sectionId);
+      section?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -20,7 +33,7 @@ export default function NavBar() {
       >
         <div className="flex lg:flex-1">
           <a
-            href="#"
+            href="/"
             className="-m-1.5 p-1.5 text-white flex items-center gap-2"
           >
             <SquareCode className="h-8 w-auto text-indigo-500" />
@@ -39,18 +52,18 @@ export default function NavBar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
-              className="text-sm/6 font-semibold text-white"
+              onClick={() => handleNavigation(item.href)}
+              className="text-sm/6 font-semibold text-white cursor-pointer"
             >
               {item.name}
-            </a>
+            </button>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#contato"
+            onClick={() => handleNavigation("contato")}
             className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
             Contato
@@ -87,8 +100,10 @@ export default function NavBar() {
                 {navigation.map((item) => (
                   <a
                     key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      handleNavigation(item.href);
+                    }}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
                   >
                     {item.name}
@@ -97,7 +112,10 @@ export default function NavBar() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleNavigation("contato");
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   Contato

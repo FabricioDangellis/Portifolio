@@ -14,9 +14,26 @@ import Imagem1 from "../assets/turned-gray-laptop-computer.jpg";
 import Trajetorias from "../assets/dashboard.png";
 import TaskBoard from "../assets/Imagem2.png";
 import Projeto from "../components/Projeto";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace("#", "");
+      const section = document.getElementById(sectionId);
+      if (section) {
+        // usa timeout para garantir que a renderização terminou
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const projetos = [
     {

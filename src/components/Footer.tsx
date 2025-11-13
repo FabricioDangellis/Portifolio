@@ -1,7 +1,28 @@
 import { Github, Linkedin, SquareCode } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+   const navigation = [
+    { name: "Home", href: "home" },
+    { name: "Sobre", href: "sobre" },
+    { name: "Serviços", href: "servicos" },
+    { name: "Projetos", href: "projetos" },
+    { name: "Contato", href: "contato"},
+  ];
+
+  function handleNavigation(sectionId: string) {
+    if (location.pathname !== "/") {
+      navigate(`/#${sectionId}`)
+    } else {
+      const section = document.getElementById(sectionId);
+      section?.scrollIntoView({behavior: "smooth"});
+    }
+  }
 
   return (
     <footer className="w-full bg-gray-900  text-gray-400 py-10 px-6 flex flex-col items-center gap-6">
@@ -17,21 +38,15 @@ export default function Footer() {
         </div>
 
         <nav className="flex gap-6 flex-wrap justify-center text-sm md:text-base">
-          <a href="#topo" className="hover:text-white transition">
-            Home
-          </a>
-          <a href="#sobre" className="hover:text-white transition">
-            Sobre
-          </a>
-          <a href="#servicos" className="hover:text-white transition">
-            Serviços
-          </a>
-          <a href="#projetos" className="hover:text-white transition">
-            Projetos
-          </a>
-          <a href="#contato" className="hover:text-white transition">
-            Contato
-          </a>
+          {navigation.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleNavigation(item.href)}
+              className="hover:text-white transition"
+            >
+              {item.name}
+            </button>
+          ))}
         </nav>
 
         <div className="flex flex-col gap-5 text-xl">

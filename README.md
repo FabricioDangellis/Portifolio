@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+<img width="1584" height="396" alt="Image" src="https://github.com/user-attachments/assets/244a004c-9873-4958-95f0-98c621587c58" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Fabrício D'Angellis
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido para apresentar meus trabalhos, habilidades e experiências na área de desenvolvimento web. O design foi pensado para ser minimalista, elegante e focado na usabilidade, Este projeto é o meu portfólio pessoal, desenvolvido com o objetivo de reunir e apresentar meus principais trabalhos, habilidades e experiências como desenvolvedor. Ele reflete não apenas minha trajetória técnica, mas também meu gosto por interfaces minimalistas e bem estruturadas. Busquei criar uma navegação fluida e intuitiva, com foco em uma experiência visual agradável e uma apresentação clara dos projetos. Embora ainda não tenha adicionado todos os meus trabalhos, decidi compartilhar o portfólio desde já como uma forma de mostrar minha evolução e deixar visível o que já construí até aqui.
 
-## React Compiler
+&nbsp;
+***
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,ts,vite,tailwind" />
+  </a>
+</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+&nbsp;
+***
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  - Página inicial com apresentação e destaque dos projetos
+  - Seções de Sobre, Serviços, Projetos e Contato
+  - Menu responsivo com navegação suave entre seções
+  - Integração de transições animadas para uma experiência fluida
+  - Suporte a múltiplos dispositivos (layout responsivo)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+&nbsp;
+***
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

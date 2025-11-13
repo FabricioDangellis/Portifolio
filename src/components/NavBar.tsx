@@ -10,7 +10,7 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   const navigation = [
-    { name: "Home", href: " " },
+    { name: "Home", href: "home" },
     { name: "Sobre", href: "sobre" },
     { name: "Serviços", href: "servicos" },
     { name: "Projetos", href: "projetos" },

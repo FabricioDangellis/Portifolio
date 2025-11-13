@@ -99,7 +99,7 @@ export default function Trajetorias() {
             </svg>
 
             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-              <img src={TrajetoriasIMG} className="sm:mb-10" />
+              <img src={TrajetoriasIMG} className="mb-5 sm:mb-10 justify-self-center lg:justify-self-start" />
               <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
                 Sitema Trajetórias
               </h2>

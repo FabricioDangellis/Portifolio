@@ -90,7 +90,7 @@ export default function TaskBoard() {
             </svg>
 
             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-              <img src={TaskboardLogo} className="sm:mb-10 bg-white/70 rounded-lg h-13" />
+              <img src={TaskboardLogo} className="mb-5 sm:mb-10 bg-white/70 rounded-lg h-13 lg:justify-self-center" />
 
               <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
                 Sitema TaskBoard
